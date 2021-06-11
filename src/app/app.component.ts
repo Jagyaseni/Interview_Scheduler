@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import {AngularFireDatabase} from '@angular/fire/database';
+import { Observable } from 'rxjs';
 interface Food {
   value: string;
   viewValue: string;
@@ -14,6 +15,13 @@ export class AppComponent {
 
   title="Interview Scheduler";
   items = ["Participant 1", "Participant 2"];
+  itValue=' ';
+  its: Observable<any[]>;
+
+  constructor(public db: AngularFireDatabase){
+    this.its=db.list('its').valueChanges();
+  }
+
   newItem = "";
   pushItem(){
     if(this.newItem != "") {

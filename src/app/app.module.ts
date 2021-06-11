@@ -10,6 +10,10 @@ import { MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSortModule} from '@angular/material/sort';
+import { AngularFireModule} from '@angular/fire';
+import { AngularFireDatabase, AngularFireDatabaseModule} from '@angular/fire/database';
+import { environment} from '../environments/environment';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,9 @@ import {MatSortModule} from '@angular/material/sort';
     MatListModule,
     MatSelectModule,
     MatSortModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -22,7 +22,7 @@
   </mat-form-field>
 
   <div class="example-button-row">
-    <button type="button" mdbBtn color="success" mdbWavesEffect>Submit</button>
+    <button type="submit" class="btn btn-success" >Submit</button>
   </div>
   <ul>
     <li *ngFor="let i of items">
@@ -35,7 +35,7 @@
 <div class="main1">
   <h1>Scheduled Interviews</h1>
   <ul>
-    <li *ngFor="let i of items; let ind=index">
+    <li *ngFor="let i of items; let ind = index">
       {{i}}
       <span (click)="removeItem(ind)">x</span>
     </li>
