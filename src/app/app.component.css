@@ -7,6 +7,14 @@
   margin-top: 20px;
   font-family: sans-serif;
 }
+.front{
+  margin-top: 0%;
+  background-image: url('../assets/images/3.jpg');
+  background-repeat: no-repeat;
+  height: 100%;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
 .main1 {
   width: 500px;
   text-align: center;

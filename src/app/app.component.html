@@ -1,41 +1,49 @@
 <router-outlet></router-outlet>
+<div class="front">
 
-<div class="main">
-  <h1>Interview Scheduler</h1>
-  <div class="addInter">
-    <input [(ngModel)]="newItem" placeholder="Add Interviewer" class="addText">
+  <div class="main">
+    <h1>Interview Scheduler</h1>
+    <div class="addInter">
+      <input [(ngModel)]="newItem" placeholder="Add Interviewer" class="addText">
+    </div>
+    <div class="addInter">
+      <input [(ngModel)]="newItem" placeholder="Add Interviewee" class="addText">
+    </div>
+
+    <mat-form-field appearance="fill">
+      <mat-label><h3>Select Time Slot</h3></mat-label>
+      <select matNativeControl>
+        <option value="101">Choose slot</option>
+        <option value="101">9.00am-10.00am</option>
+        <option value="102">11.00am-12.00am</option>
+        <option value="103">04.00pm-05.00pm</option>
+      </select>
+    </mat-form-field>
+
+    <div class="example-button-row">
+      <button type="submit" class="btn btn-success" (click)="pushItem()">Submit</button>
+    </div>
+
   </div>
-  <div class="addInter">
-    <input [(ngModel)]="newItem" placeholder="Add Interviewee" class="addText">
-  </div>
 
-  <mat-form-field appearance="fill">
-    <mat-label><h3>Select Time Slot</h3></mat-label>
-    <select matNativeControl>
-      <option value="101">Choose slot</option>
-      <option value="101">9.00am-10.00am</option>
-      <option value="102">11.00am-12.00am</option>
-      <option value="103">04.00pm-05.00pm</option>
-    </select>
-  </mat-form-field>
+  <div class="main1">
+    <h1>Scheduled Interviews</h1>
+    <ul>
+      <h2 style="color:cornsilk; background-color:lightseagreen;">Interview 1</h2>
+      <li *ngFor="let i of items; let ind = index" >
+        {{i}}
+        <span (click)="removeItem(ind)">x</span>
+      </li>
+      <h2 style="color:cornsilk; background-color:lightseagreen;">Interview 2</h2>
+      <li *ngFor="let i of items; let ind = index" >
+        {{i}}
+        <span (click)="removeItem(ind)">x</span>
+      </li>
+    </ul>
+    <div>
 
-  <div class="example-button-row">
-    <button type="submit" class="btn btn-success" (click)="pushItem()">Submit</button>
+    </div>
   </div>
 
 </div>
 
-<div class="main1">
-  <h1>Scheduled Interviews</h1>
-  <ul>
-    <h2>Interview 1</h2>
-    <li *ngFor="let i of items; let ind = index" >
-      {{i}}
-      <span (click)="removeItem(ind)">x</span>
-    </li>
-
-  </ul>
-  <div>
-
-  </div>
-</div>
