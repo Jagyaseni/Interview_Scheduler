@@ -29,7 +29,7 @@
       </select>
     </mat-form-field>
     <mat-form-field>
-      <mat-label><h3 style="color: lightskyblue; padding-top: 10px;">Select End Time</h3></mat-label>
+      <mat-label><h3 style="color: lightskyblue;">Select End Time</h3></mat-label>
       <select matNativeControl style="color: lightskyblue;">
         <option value="101">Choose slot</option>
         <option value="101">09.00</option>
@@ -48,7 +48,7 @@
     </mat-form-field>
 
     <div class="example-button-row">
-      <button type="submit" class="btn btn-success" (click)="pushItem()">Submit</button>
+      <button type="submit" mat-raised-button color="green" (click)="pushItem()" >Submit</button>
     </div>
 
   </div>
@@ -60,6 +60,7 @@
         <th>Interviewer's Mail</th>
         <th>Interviewee's Mail</th>
         <th>Time Slot</th>
+        <th>Resume</th>
         <th>Edit</th>
         <th>Delete</th>
       </thead>
@@ -68,6 +69,7 @@
           <td>akshita@gmail.com</td>
           <td>jagyaseni@gmail.com</td>
           <td>13/06/2021 - 4.00pm-5.00pm</td>
+          <td><button>Upload</button><button>View</button></td>
           <td><button>Edit</button></td>
           <td>
             <span>x</span>
@@ -77,6 +79,7 @@
           <td>akshita111@gmail.com</td>
           <td>jagyaseni111@gmail.com</td>
           <td>13/06/2021 - 6.00pm-7.00pm</td>
+          <td><button>Upload</button><button>View</button></td>
           <td><button>Edit</button></td>
           <td>
             <span>x</span>
