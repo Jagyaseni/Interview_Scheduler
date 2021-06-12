@@ -5,55 +5,34 @@
     <h1>Interview Scheduler</h1>
     <div class="form-group ">
       <h2 style="color: aqua;">Interviewer List</h2>
-      <select class="form-control addInter" id="college" [(ngModel)]="selectedValue" name="Interviewer_mail" required style="color:blue;">
-        <option value="interviewer_mail">Ajay Kumar</option>
-        <option value="interviewer_mail">Ajay Kumar1</option>
-        <option value="interviewer_mail">Ajay Kumar2</option>
-        <option value="interviewer_mail">Ajay Kumar3</option>
-        <option value="interviewer_mail">Ajay Kumar4</option>
-        <option value="others">Others- Please Specify Below</option>
+      <input class="form-control" [(ngModel)]="interviewId" required
+        style="color:blue;">
+      <select class="form-control addInter" id="college" [(ngModel)]="interviewer" name="Interviewer_mail" required
+        style="color:blue;">
+        <option *ngFor="let item of interviewersList" value={{item.email}}>{{item.email}}</option>
       </select>
- </div>
-    <div class="form-group" *ngIf="selectedValue == 'others'">
-      <label for="name">Enter Interviwer Email:</label>
-      <input type="text" class="form-control" id="name" ngModel name="other_interviewer_mail" required>
     </div>
-    <select class="custom-select form-control addText" id="basic" multiple="multiple">
-      <option value="cheese" selected>Select interviewee</option>
-      <option value="tomatoes">Tom@gmail.com</option>
-      <option value="mozarella">Moz@gmail.com</option>
-      <option value="mushrooms">Mus@gmail.com</option>
-      <option value="pepperoni">Pep@gmail.com</option>
-      <option value="onions">On@gmail.com</option>
-   </select>
+    <select class="custom-select form-control addText" id="basic" [(ngModel)]="interviewee" multiple="multiple">
+      <option *ngFor="let item of intervieweesList" value={{item.email}}>{{item.email}}</option>
+    </select>
 
     <mat-form-field appearance="fill">
-      <mat-label><h3 style="color: lightskyblue;">Select Time Slot</h3></mat-label>
-      <select matNativeControl style="color: lightskyblue;">
-        <option value="101">Choose slot</option>
-        <option value="101">08.00</option>
-        <option value="101">09.00</option>
-        <option value="101">10.00</option>
-        <option value="101">11.00</option>
-        <option value="101">12.00</option>
-        <option value="101">16.00</option>
-        <option value="101">17.00</option>
-        <option value="101">18.00</option>
-        <option value="102">19.00</option>
-        <option value="103">20.00</option>
-        <option value="101">21.00</option>
-        <option value="101">22.00</option>
+      <mat-label>
+        <h3 style="color: lightskyblue;">Select Time Slot</h3>
+      </mat-label>
+      <select matNativeControl [(ngModel)]="timeSlot" style="color: lightskyblue;">
+        <option *ngFor="let item of timeSlots" value={{item}}>{{item}}</option>
       </select>
     </mat-form-field>
 
     <div class="example-button-row">
-      <button type="submit" mat-raised-button color="green" (click)="pushItem()" >Submit</button>
+      <button type="submit" mat-raised-button color="green" (click)="createInterview()">Submit</button>
     </div>
 
   </div>
 
   <div class="container main1">
-    <h2  style="color:cornsilk; background-color:lightseagreen;">List of Interviews</h2>
+    <h2 style="color:cornsilk; background-color:lightseagreen;">List of Interviews</h2>
     <table class="table">
       <thead style="color:cornsilk; background-color:lightseagreen;">
         <th>Interviewer's Mail</th>
@@ -64,28 +43,16 @@
         <th>Delete</th>
       </thead>
       <tbody>
-        <tr style="color:cornsilk; background-color:lightseagreen;width: 100%;">
-          <td>akshita@gmail.com</td>
-          <td>jagyaseni@gmail.com</td>
-          <td>13/06/2021 - 4.00pm-5.00pm</td>
+        <tr *ngFor="let interview of interviewsList" style="color:cornsilk; background-color:lightseagreen;width: 100%;">
+          <td>{{interview.interviewer}}</td>
+          <td><p *ngFor="let item of interview.interviewees">{{item}}</p></td>
+          <td>{{getTimeName(interview.timeSlot)}}</td>
           <td><button>Upload</button><button>View</button></td>
-          <td><button>Edit</button></td>
+          <td><button (click)="editInterview(interview)">Edit</button></td>
           <td>
             <span>x</span>
           </td>
         </tr>
-        <tr style="color:cornsilk; background-color:lightseagreen;width: 100%;">
-          <td>akshita111@gmail.com</td>
-          <td>jagyaseni111@gmail.com</td>
-          <td>13/06/2021 - 6.00pm-7.00pm</td>
-          <td><button>Upload</button><button>View</button></td>
-          <td><button>Edit</button></td>
-          <td>
-            <span>x</span>
-          </td>
-        </tr>
-
-
       </tbody>
     </table>
     <div>
@@ -93,5 +60,8 @@
     </div>
   </div>
 
-</div>
+  <!-- <div id="tests" style="text-align: center; margin-top: 30px;">
+    <button mat-raised-button color="primary" (click)="testFunc()">Run Test Code</button>
+  </div> -->
 
+</div>
