@@ -14,7 +14,7 @@ interface Food {
 export class AppComponent {
 
   title="Interview Scheduler";
-  items = ["Interviewer 1", "Interviwee 1"];
+  items = ["Interviewer 1", "Interviewee 1"];
   itValue=' ';
   its: Observable<any[]>;
 

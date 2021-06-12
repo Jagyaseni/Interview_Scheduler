@@ -11,12 +11,39 @@
     </div>
 
     <mat-form-field appearance="fill">
-      <mat-label><h3 style="color: lightskyblue;">Select Time Slot</h3></mat-label>
+      <mat-label><h3 style="color: lightskyblue;">Select Start Time</h3></mat-label>
       <select matNativeControl style="color: lightskyblue;">
         <option value="101">Choose slot</option>
-        <option value="101">9.00am-10.00am</option>
-        <option value="102">11.00am-12.00am</option>
-        <option value="103">04.00pm-05.00pm</option>
+        <option value="101">08.00</option>
+        <option value="101">09.00</option>
+        <option value="101">10.00</option>
+        <option value="101">11.00</option>
+        <option value="101">12.00</option>
+        <option value="101">16.00</option>
+        <option value="101">17.00</option>
+        <option value="101">18.00</option>
+        <option value="102">19.00</option>
+        <option value="103">20.00</option>
+        <option value="101">21.00</option>
+        <option value="101">22.00</option>
+      </select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label><h3 style="color: lightskyblue; padding-top: 10px;">Select End Time</h3></mat-label>
+      <select matNativeControl style="color: lightskyblue;">
+        <option value="101">Choose slot</option>
+        <option value="101">09.00</option>
+        <option value="101">10.00</option>
+        <option value="101">11.00</option>
+        <option value="101">12.00</option>
+        <option value="101">16.00</option>
+        <option value="101">17.00</option>
+        <option value="101">18.00</option>
+        <option value="102">19.00</option>
+        <option value="103">20.00</option>
+        <option value="101">21.00</option>
+        <option value="101">22.00</option>
+        <option value="101">23.00</option>
       </select>
     </mat-form-field>
 
@@ -26,20 +53,39 @@
 
   </div>
 
-  <div class="main1">
-    <h1>Scheduled Interviews</h1>
-    <ul>
-      <h2 style="color:cornsilk; background-color:lightseagreen;">Interview 1</h2>
-      <li *ngFor="let i of items; let ind = index" >
-        {{i}}
-        <span (click)="removeItem(ind)">x</span>
-      </li>
-      <h2 style="color:cornsilk; background-color:lightseagreen;">Interview 2</h2>
-      <li *ngFor="let i of items; let ind = index" >
-        {{i}}
-        <span (click)="removeItem(ind)">x</span>
-      </li>
-    </ul>
+  <div class="container main1">
+    <h2  style="color:cornsilk; background-color:lightseagreen;">List of Interviews</h2>
+    <table class="table">
+      <thead style="color:cornsilk; background-color:lightseagreen;">
+        <th>Interviewer's Mail</th>
+        <th>Interviewee's Mail</th>
+        <th>Time Slot</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </thead>
+      <tbody>
+        <tr style="color:cornsilk; background-color:lightseagreen;width: 100%;">
+          <td>akshita@gmail.com</td>
+          <td>jagyaseni@gmail.com</td>
+          <td>13/06/2021 - 4.00pm-5.00pm</td>
+          <td><button>Edit</button></td>
+          <td>
+            <span>x</span>
+          </td>
+        </tr>
+        <tr style="color:cornsilk; background-color:lightseagreen;width: 100%;">
+          <td>akshita111@gmail.com</td>
+          <td>jagyaseni111@gmail.com</td>
+          <td>13/06/2021 - 6.00pm-7.00pm</td>
+          <td><button>Edit</button></td>
+          <td>
+            <span>x</span>
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
     <div>
 
     </div>
