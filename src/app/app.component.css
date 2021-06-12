@@ -39,11 +39,12 @@ h1{
 .addInter{
   position: relative;
   padding-bottom: 10px;
-  height: 30px;
+  height: 40px;
+  font-size: 20px;
 }
 .addText{
   width: 80%;
-  height: 30px;
+  height: auto;
   padding: 0px;
   font-size: 20px;
 }

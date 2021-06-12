@@ -5,7 +5,7 @@
     <h1>Interview Scheduler</h1>
     <div class="form-group ">
       <h2 style="color: aqua;">Interviewer List</h2>
-      <select class="form-control addText" id="college" [(ngModel)]="selectedValue" name="interviewer_mail" required>
+      <select class="form-control addInter" id="college" [(ngModel)]="selectedValue" name="Interviewer_mail" required style="color:blue;">
         <option value="interviewer_mail">Ajay Kumar</option>
         <option value="interviewer_mail">Ajay Kumar1</option>
         <option value="interviewer_mail">Ajay Kumar2</option>
@@ -18,10 +18,14 @@
       <label for="name">Enter Interviwer Email:</label>
       <input type="text" class="form-control" id="name" ngModel name="other_interviewer_mail" required>
     </div>
-
-    <div class="addInter">
-      <input [(ngModel)]="newItem1" placeholder="Add Interviewee" class="addText">
-    </div>
+    <select class="custom-select form-control addText" id="basic" multiple="multiple">
+      <option value="cheese" selected>Select interviewee</option>
+      <option value="tomatoes">Tom@gmail.com</option>
+      <option value="mozarella">Moz@gmail.com</option>
+      <option value="mushrooms">Mus@gmail.com</option>
+      <option value="pepperoni">Pep@gmail.com</option>
+      <option value="onions">On@gmail.com</option>
+   </select>
 
     <mat-form-field appearance="fill">
       <mat-label><h3 style="color: lightskyblue;">Select Time Slot</h3></mat-label>
