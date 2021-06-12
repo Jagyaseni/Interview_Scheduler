@@ -23,12 +23,18 @@ export class AppComponent {
   }
 
   newItem = "";
+  newItem1 = "";
   pushItem(){
     if(this.newItem != "") {
       this.items.push(this.newItem);
       this.newItem="";
     }
+    if(this.newItem1 != "") {
+      this.items.push(this.newItem1);
+      this.newItem1="";
+    }
   }
+
   foods: Food[] = [
     {value: '9am-0', viewValue: '15/06/2021-9.00am-10.00am'},
     {value: '11am-1', viewValue: '15/06/2021-11.00am-12.00am'},
