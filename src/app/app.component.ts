@@ -21,7 +21,7 @@ export class AppComponent {
   constructor(public db: AngularFireDatabase){
     this.its=db.list('its').valueChanges();
   }
-
+  selectedValue: string = '';
   newItem = "";
   newItem1 = "";
   pushItem(){

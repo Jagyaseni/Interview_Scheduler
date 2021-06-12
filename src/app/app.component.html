@@ -3,15 +3,28 @@
 
   <div class="main">
     <h1>Interview Scheduler</h1>
-    <div class="addInter">
-      <input [(ngModel)]="newItem" placeholder="Add Interviewer" class="addText">
+    <div class="form-group ">
+      <h2 style="color: aqua;">Interviewer List</h2>
+      <select class="form-control addText" id="college" [(ngModel)]="selectedValue" name="interviewer_mail" required>
+        <option value="interviewer_mail">Ajay Kumar</option>
+        <option value="interviewer_mail">Ajay Kumar1</option>
+        <option value="interviewer_mail">Ajay Kumar2</option>
+        <option value="interviewer_mail">Ajay Kumar3</option>
+        <option value="interviewer_mail">Ajay Kumar4</option>
+        <option value="others">Others- Please Specify Below</option>
+      </select>
+ </div>
+    <div class="form-group" *ngIf="selectedValue == 'others'">
+      <label for="name">Enter Interviwer Email:</label>
+      <input type="text" class="form-control" id="name" ngModel name="other_interviewer_mail" required>
     </div>
+
     <div class="addInter">
       <input [(ngModel)]="newItem1" placeholder="Add Interviewee" class="addText">
     </div>
 
     <mat-form-field appearance="fill">
-      <mat-label><h3 style="color: lightskyblue;">Select Start Time</h3></mat-label>
+      <mat-label><h3 style="color: lightskyblue;">Select Time Slot</h3></mat-label>
       <select matNativeControl style="color: lightskyblue;">
         <option value="101">Choose slot</option>
         <option value="101">08.00</option>
@@ -26,24 +39,6 @@
         <option value="103">20.00</option>
         <option value="101">21.00</option>
         <option value="101">22.00</option>
-      </select>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label><h3 style="color: lightskyblue;">Select End Time</h3></mat-label>
-      <select matNativeControl style="color: lightskyblue;">
-        <option value="101">Choose slot</option>
-        <option value="101">09.00</option>
-        <option value="101">10.00</option>
-        <option value="101">11.00</option>
-        <option value="101">12.00</option>
-        <option value="101">16.00</option>
-        <option value="101">17.00</option>
-        <option value="101">18.00</option>
-        <option value="102">19.00</option>
-        <option value="103">20.00</option>
-        <option value="101">21.00</option>
-        <option value="101">22.00</option>
-        <option value="101">23.00</option>
       </select>
     </mat-form-field>
 
