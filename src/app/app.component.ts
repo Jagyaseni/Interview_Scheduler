@@ -14,7 +14,7 @@ interface Food {
 export class AppComponent {
 
   title="Interview Scheduler";
-  items = ["Participant 1", "Participant 2"];
+  items = ["Interviewer 1", "Interviwee 1"];
   itValue=' ';
   its: Observable<any[]>;
 
@@ -30,9 +30,9 @@ export class AppComponent {
     }
   }
   foods: Food[] = [
-    {value: '9am-0', viewValue: '9.00am-10.00am'},
-    {value: '11am-1', viewValue: '11.00am-12.00am'},
-    {value: '4pm-2', viewValue: '4.00pm-5.00pm'}
+    {value: '9am-0', viewValue: '15/06/2021-9.00am-10.00am'},
+    {value: '11am-1', viewValue: '15/06/2021-11.00am-12.00am'},
+    {value: '4pm-2', viewValue: '15/06/2021-4.00pm-5.00pm'}
   ];
 
 removeItem(index:number){

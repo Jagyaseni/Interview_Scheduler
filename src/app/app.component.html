@@ -4,11 +4,9 @@
   <h1>Interview Scheduler</h1>
   <div class="addInter">
     <input [(ngModel)]="newItem" placeholder="Add Interviewer" class="addText">
-    <button (click)="pushItem()">Add</button>
   </div>
   <div class="addInter">
     <input [(ngModel)]="newItem" placeholder="Add Interviewee" class="addText">
-    <button (click)="pushItem()">Add</button>
   </div>
 
   <mat-form-field appearance="fill">
@@ -22,23 +20,20 @@
   </mat-form-field>
 
   <div class="example-button-row">
-    <button type="submit" class="btn btn-success" >Submit</button>
+    <button type="submit" class="btn btn-success" (click)="pushItem()">Submit</button>
   </div>
-  <ul>
-    <li *ngFor="let i of items">
-      {{i}}
-      <span>x</span>
-    </li>
-  </ul>
+
 </div>
 
 <div class="main1">
   <h1>Scheduled Interviews</h1>
   <ul>
-    <li *ngFor="let i of items; let ind = index">
+    <h2>Interview 1</h2>
+    <li *ngFor="let i of items; let ind = index" >
       {{i}}
       <span (click)="removeItem(ind)">x</span>
     </li>
+
   </ul>
   <div>
 
