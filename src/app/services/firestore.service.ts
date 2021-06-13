@@ -106,7 +106,7 @@ export class FirestoreService {
   validateInterview(interview: Interview): Promise<boolean> {
     return new Promise((resolve, reject) => {
       let interviewer: Interviewer, interviewees: Array<Interviewee> = [];
-      if (interview.interviewer && interview.interviewees) {
+      if (interview.interviewer && interview.interviewees && interview.timeSlot) {
         // Now Atleast Two Participants are present
 
         this.getInterviewer(interview.interviewer).subscribe(doc => {
@@ -120,6 +120,11 @@ export class FirestoreService {
           });
         });
       }
+      else if(!interview.interviewer || !interview.interviewees)
+      console.log('Please select 2 participants!');
+
+      else
+      console.log('Time slot is already booked');
     });
   }
 

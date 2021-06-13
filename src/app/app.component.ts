@@ -82,7 +82,9 @@ export class AppComponent implements OnInit {
       interviewees: this.interviewee,
       timeSlot: new Date(this.timeSlot).getTime().toString()
     };
+
     this.firestoreService.createInterview(interviewObj);
+
   }
 
   editInterview(interview: Interview) {

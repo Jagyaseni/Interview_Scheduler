@@ -40,7 +40,6 @@
         <th>Time Slot</th>
         <th>Resume</th>
         <th>Edit</th>
-        <th>Delete</th>
       </thead>
       <tbody>
         <tr *ngFor="let interview of interviewsList" style="color:cornsilk; background-color:lightseagreen;width: 100%;">
@@ -49,9 +48,6 @@
           <td>{{getTimeName(interview.timeSlot)}}</td>
           <td><button>Upload</button><button>View</button></td>
           <td><button (click)="editInterview(interview)">Edit</button></td>
-          <td>
-            <span>x</span>
-          </td>
         </tr>
       </tbody>
     </table>
